@@ -1,0 +1,106 @@
+.page__first {
+    padding-top: 120px;
+
+    .main__container {
+        display: flex;
+        position: relative;
+        flex-wrap: wrap;
+
+
+        &::before {
+            content: "";
+            background-color: #F1EADC;
+            position: absolute;
+            width: 200%;
+            height: 130%;
+            top: -130px;
+            left: 50%;
+        }
+
+        &.page__first {
+            .content {
+                flex: 0 1 48%;
+                padding-top: 145px;
+                padding-right: 10px;
+
+                .content__title {
+                    font-weight: 500;
+                    font-size: 55px;
+                    line-height: 110%;
+                    letter-spacing: 0.02em;
+                    color: #000000;
+                    padding-bottom: 20px;
+                }
+
+                .content__block {
+                    width: 400px;
+
+                    .content__description {
+                        font-weight: 400;
+                        font-size: 20px;
+                        line-height: 140%;
+
+                        letter-spacing: 0.02em;
+                        padding-bottom: 20px;
+                        color: #000000;
+                    }
+
+                    button {
+                        float: right;
+
+                    }
+
+                }
+
+            }
+
+            .photo {
+                flex: 0 1 52%;
+                position: relative;
+                z-index: 2;
+
+
+
+                img {
+
+                    float: right;
+
+
+                }
+
+                .photo__other {
+
+
+                    &.other-photo {
+                        position: relative;
+                        padding-bottom: 95%;
+
+                        .other-photo__img-2 {
+                            position: absolute;
+                            top: 123px;
+                            right: -105px;
+                            z-index: 4;
+
+
+
+                        }
+
+                        .other-photo__img-3 {
+                            position: absolute;
+                            left: 0;
+                            bottom: -25%;
+                            z-index: 4;
+
+
+
+                        }
+
+                    }
+                }
+
+
+            }
+        }
+    }
+
+}

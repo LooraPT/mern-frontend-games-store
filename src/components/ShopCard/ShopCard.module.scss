@@ -1,0 +1,63 @@
+.shopCard {
+    width: 356px;
+    height: 558px;
+
+
+    .shopImg {
+        background: rgba(110, 156, 159, 0.64);
+        width: 350px;
+        height: 478px;
+        position: relative;
+        z-index: 1;
+
+        .Img1 {
+            position: relative;
+            z-index: 10;
+
+            &:hover {
+                transition: all linear 0.2s;
+                opacity: 0.3;
+                cursor: pointer;
+
+            }
+        }
+
+        .Img2 {
+            position: absolute;
+            top: 50%;
+            right: 45%;
+            z-index: 2;
+        }
+
+    }
+
+    .shopDescription {
+        text-align: center;
+        padding-top: 20px;
+
+        h4 {
+            font-weight: 500;
+            font-size: 20px;
+            line-height: 140%;
+            letter-spacing: 0.02em;
+            color: #000000;
+        }
+
+        h5 {
+            font-weight: 500;
+            font-size: 15px;
+            line-height: 140%;
+            letter-spacing: 0.02em;
+            color: #998E78;
+        }
+
+        s {
+            font-weight: 500;
+            font-size: 15px;
+            line-height: 140%;
+            letter-spacing: 0.02em;
+            color: #998E78;
+
+        }
+    }
+}

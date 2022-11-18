@@ -1,0 +1,58 @@
+.header {
+
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 50;
+
+    &__container {
+        display: flex;
+        align-items: center;
+        min-height: 130px;
+    }
+
+    &__menu {
+        display: flex;
+        flex: 1 1 auto;
+        justify-content: center;
+
+        .menu {
+            &__list {
+                display: flex;
+                gap: 45px;
+
+            }
+
+            &__item a:hover {
+                color: #6E9C9F;
+            }
+        }
+
+    }
+
+    &__button {
+        text-align: center;
+
+        .button {
+            &__nav {
+                display: flex;
+                text-align: center;
+            }
+
+            &__phone {
+                padding-right: 20px;
+
+
+
+                & img {
+                    &:hover {
+                        background-color: #6E9C9F;
+                    }
+                }
+
+            }
+        }
+
+    }
+}

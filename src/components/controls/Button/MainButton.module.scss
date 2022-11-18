@@ -1,0 +1,21 @@
+@import '../../../styles/variables.scss';
+
+.mainButton {
+    border: 1px solid #6E9C9F;
+    padding: 22px 50px;
+    background-color: transparent;
+    color: #6E9C9F;
+    line-height: 138.9%;
+    font-weight: 400;
+    font-size: 17px;
+    letter-spacing: 0.02em;
+    font-family: $fontFamily;
+    transition: all linear 0.2s;
+
+    &:hover {
+        background-color: #6E9C9F;
+        cursor: pointer;
+        color: white;
+
+    }
+}

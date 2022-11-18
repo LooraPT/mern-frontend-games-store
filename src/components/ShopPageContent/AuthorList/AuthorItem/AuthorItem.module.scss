@@ -1,0 +1,13 @@
+.buttonAuthor {
+    border: 1px solid #000000;
+    padding: 19px 65px;
+    background: transparent;
+    color: black;
+
+    &:hover {
+        background-color: black;
+        color: white;
+        transition: all linear 0.2s;
+        cursor: pointer;
+    }
+}

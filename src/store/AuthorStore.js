@@ -2,13 +2,8 @@ import { makeAutoObservable } from 'mobx';
 
 export default class AuthorStore {
     constructor() {
-        this._author = [
-            { id: 1, name: 'Cd prodject' },
-            { id: 2, name: 'Cd prodject' },
-            { id: 3, name: 'Cd prodject' },
-            { id: 4, name: 'Cd prodject' },
-        ]
-
+        this._author = []
+        this._selectedAuthor = {}
         makeAutoObservable(this)
     }
 
@@ -18,6 +13,14 @@ export default class AuthorStore {
 
     get author() {
         return this._author;
+    }
+
+    setSelectedAuthor(author) {
+        this._selectedAuthor = author;
+    }
+
+    get selectedAuthor() {
+        return this._selectedAuthor;
     }
 
 }

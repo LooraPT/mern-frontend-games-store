@@ -3,7 +3,7 @@ import { makeAutoObservable } from 'mobx';
 export default class GenreStore {
     constructor() {
         this._genre = []
-
+        this._selectedGenre = {}
         makeAutoObservable(this)
     }
 
@@ -13,6 +13,14 @@ export default class GenreStore {
 
     get genre() {
         return this._genre;
+    }
+
+    setSelectedGenre(genre) {
+        this._selectedGenre = genre;
+    }
+
+    get selectedGenre() {
+        return this._selectedGenre;
     }
 
 }

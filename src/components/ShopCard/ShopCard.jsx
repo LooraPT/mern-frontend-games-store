@@ -11,8 +11,8 @@ function ShopCard({ gameD, ...props }) {
 
     return (
         <div {...props} className={cl.shopCard}>
-            <div onClick={() => navigate(ITEM_ROUTE + '/' + gameD.id)} className={cl.shopImg}>
-                <NavLink><img className={cl.Img1} src={game} alt="game" /></NavLink>
+            <div onClick={() => navigate(ITEM_ROUTE + '/' + gameD._id)} className={cl.shopImg}>
+                <NavLink><img className={cl.Img1} src={process.env.REACT_APP_SERVER_URL_2 + gameD.img} alt="game" /></NavLink>
                 <NavLink><img className={cl.Img2} src={vector} alt="vector" /></NavLink>
             </div>
             <div className={cl.shopDescription}>

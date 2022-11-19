@@ -1,6 +1,6 @@
 import React from 'react';
 import { NavLink, useNavigate } from 'react-router-dom';
-import { ABOUT_ROUTE, CONTACT_ROUTE, LOGIN_ROUTE, MAIN_ROUTE, REGISTRATION_ROUTE, SHOP_ROUTE } from '../../utils/pages';
+import { ABOUT_ROUTE, CONTACT_ROUTE, LOGIN_ROUTE, MAIN_ROUTE, REGISTRATION_ROUTE, SHOP_ROUTE, CART_ROUTE } from '../../utils/pages';
 import Logo from '../../assets/Logo.svg';
 import { useContext } from 'react';
 import { Context } from '../..';
@@ -36,7 +36,7 @@ function NavBarMain(props) {
                                 <img style={{ cursor: 'pointer' }} src={PhoneIcon} alt="phone__icon" />
                                 <span>+380 111 111 11 11</span>
                             </div>
-                            <img style={{ cursor: 'pointer' }} src={CartIcon} alt="cart" />
+                            <img onClick={() => navigate(CART_ROUTE)} style={{ cursor: 'pointer' }} src={CartIcon} alt="cart" />
                         </div>
                         :
                         <div className="button__authorization">

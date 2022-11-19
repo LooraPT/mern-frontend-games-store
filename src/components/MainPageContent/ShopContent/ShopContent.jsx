@@ -26,7 +26,7 @@ function ShopContent(props) {
                     ''}
                 <div style={{ display: 'flex', width: '100%', flexWrap: 'wrap', gap: '20px' }} className="games__catalog">
                     {games.games.map(game =>
-                        <ShopCard style={{ marginBottom: '20px' }} key={game.id} gameD={game} />
+                        <ShopCard style={{ marginBottom: '20px' }} key={game._id} gameD={game} />
                     )}
                 </div>
                 {!isShop

@@ -8,25 +8,32 @@ import { observer } from 'mobx-react-lite';
 import { useContext } from 'react';
 import { Context } from '../..';
 import ShopCard from '../../components/ShopCard/ShopCard';
+import CartService from '../../services/cart-service';
 
 function ItemProduct() {
-    const { games } = useContext(Context)
+    const { games, cart } = useContext(Context)
     const { id } = useParams()
 
+    const fetchOne = async () => {
+        const { data } = await GamesService.fetchOneGames(id)
+        games.setSelectedGames(data)
+    }
+
+    const gamesCheck = async () => {
+        let limit = 50;
+        let page = 1;
+        const { data } = await GamesService.fetchGames(null, null, limit, page)
+        games.setGames(data.rows)
+
+    }
+
+    const addItemInCart = async () => {
+        const { data } = await CartService.addItemInCart(id)
+
+    }
 
     useEffect(() => {
-        const fetchOne = async () => {
-            const { data } = await GamesService.fetchOneGames(id)
-            games.setSelectedGames(data)
-        }
         fetchOne()
-        const gamesCheck = async () => {
-            let limit = 50;
-            let page = 1;
-            const { data } = await GamesService.fetchGames(null, null, limit, page)
-            games.setGames(data.rows)
-
-        }
         gamesCheck()
     }, [])
 
@@ -36,7 +43,7 @@ function ItemProduct() {
 
 
     return (
-        <section style={{ paddingTop: '189px' }} className="item__page item">
+        <section style={{ paddingTop: '189px', paddingBottom: '25px' }} className="item__page item">
             <div className="item__container">
                 <div className="item__location">
                     <h1>{game.name}</h1>
@@ -48,7 +55,7 @@ function ItemProduct() {
                     </div>
                     <div className='info__about'>
                         <p className="info__about-price">{'$' + game.price}{game.prePrice ? <s>{'$' + game.prePrice}</s> : ''}</p>
-                        <MainButton>Add to cart</MainButton>
+                        <MainButton onClick={addItemInCart}>Add to cart</MainButton>
                     </div>
                 </div>
                 <div style={{ paddingTop: '70px' }} className="same__items">

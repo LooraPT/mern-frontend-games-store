@@ -17,6 +17,7 @@ function Shop() {
             games.setGames(data.rows)
 
         }
+
         gamesCheck()
 
     }, [])

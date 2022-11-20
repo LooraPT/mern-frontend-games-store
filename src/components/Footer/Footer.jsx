@@ -6,8 +6,11 @@ import { Context } from '../..';
 import AuthService from '../../services/auth-service';
 import { ABOUT_ROUTE, ADMIN_ROUTE, CONTACT_ROUTE, MAIN_ROUTE, SHOP_ROUTE } from '../../utils/pages';
 import MainButton from '../controls/Button/MainButton';
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
+import './Footer.scss';
+import instagram from '../../assets/icons/instagram.svg';
+import facebook from '../../assets/icons/facebook.svg';
+import twitter from '../../assets/icons/twitter.svg';
+import visaMastercard from '../../assets/icons/visa-mastercard.svg';
 
 function Footer(props) {
     const { user } = useContext(Context)
@@ -30,7 +33,7 @@ function Footer(props) {
 
     return (
         <footer style={{ background: '#F1EADC', paddingTop: '92px', paddingBottom: '92px', marginTop: '20px' }} className="footer">
-            <div style={{ display: 'flex' }} className="footer__container">
+            <div style={{ display: 'grid', gridTemplateColumns: '2fr 4fr 1fr' }} className="footer__container">
                 <div className="footer__col">
                     <div style={{ paddingBottom: '67px' }} className="footer__logo">GameAwesome</div>
                     <div className="footer__logo">
@@ -47,10 +50,16 @@ function Footer(props) {
                     </ul>
                 </div>
                 <div className="footer__col">
-                    <div className="footer__phone">+111111111</div>
+                    <div style={{ paddingBottom: '15px' }} className="footer__phone">+111111111</div>
                     <div className="footer__email">test@gmail.com</div>
-                    <div className="footer__social"></div>
-                    <div className="footer__card"></div>
+                    <div className="footer__social">
+                        <NavLink><img className="footer__social-item" src={instagram} /></NavLink>
+                        <NavLink><img className="footer__social-item" src={facebook} /></NavLink>
+                        <NavLink><img className="footer__social-item" src={twitter} /></NavLink>
+                    </div>
+                    <div className="footer__card">
+                        <img src={visaMastercard} alt="" />
+                    </div>
                 </div>
             </div>
         </footer>

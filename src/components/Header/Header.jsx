@@ -9,10 +9,15 @@ import PhoneIcon from '../../assets/telephone.svg';
 import "./Header.scss";
 import CartIcon from '../../assets/cart.svg';
 import { observer } from "mobx-react-lite";
+import ModalCall from './ModalCall/ModalCall';
+import { useState } from 'react';
 
 function NavBarMain(props) {
+    const [visible, setVisible] = useState(false)
     const { user } = useContext(Context)
     const navigate = useNavigate();
+
+
 
     return (
         <header className="header">
@@ -33,7 +38,7 @@ function NavBarMain(props) {
                         ?
                         <div className="button__nav">
                             <div className="button__phone phone">
-                                <img style={{ cursor: 'pointer' }} src={PhoneIcon} alt="phone__icon" />
+                                <img onClick={() => setVisible(true)} style={{ cursor: 'pointer' }} src={PhoneIcon} alt="phone__icon" />
                                 <span>+380 111 111 11 11</span>
                             </div>
                             <img onClick={() => navigate(CART_ROUTE)} style={{ cursor: 'pointer' }} src={CartIcon} alt="cart" />
@@ -46,7 +51,9 @@ function NavBarMain(props) {
                     }
                 </div>
             </div>
+            <ModalCall visible={visible} setVisible={setVisible} />
         </header>
+
     );
 }
 

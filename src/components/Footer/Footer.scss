@@ -1,0 +1,17 @@
+.footer {
+    &__social {
+        padding-top: 15px;
+        display: flex;
+        gap: 10px;
+
+        &-item {
+            &:hover {
+                transform: scale(1.2);
+            }
+        }
+    }
+
+    &__card {
+        padding-top: 15px;
+    }
+}

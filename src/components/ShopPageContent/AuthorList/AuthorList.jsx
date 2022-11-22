@@ -27,11 +27,11 @@ function AuthorList({ ...props }) {
     return (
         <div {...props} className={cl.authorList}>
             {author.author.map(aut =>
-                <AuthorItem style={{ marginRight: '10px', marginBottom: '10px' }} key={aut._id}>{aut.name}</AuthorItem>
+                <AuthorItem key={aut._id}>{aut.name}</AuthorItem>
             )}
             <br style={{ padding: '20px 0px' }} />
             {genre.genre.map(gen =>
-                <AuthorItem style={{ marginRight: '10px', marginBottom: '10px' }} key={gen._id}>{gen.name}</AuthorItem>
+                <AuthorItem key={gen._id}>{gen.name}</AuthorItem>
             )}
         </div>
     );

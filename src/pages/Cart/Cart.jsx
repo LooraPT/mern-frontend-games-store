@@ -31,7 +31,7 @@ function Cart() {
 
     useEffect(() => {
         fetchAllItemsCart()
-    }, [])
+    }, [cart.selectedItem])
 
     return (
         <section className="cart" style={{ paddingTop: '256px' }}>

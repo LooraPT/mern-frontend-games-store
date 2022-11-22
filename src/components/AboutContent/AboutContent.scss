@@ -1,0 +1,35 @@
+.blog {
+    display: flex;
+    padding-bottom: 130px;
+    flex-wrap: wrap;
+
+    &__image {
+        flex: 1 1 40%;
+    }
+
+    &__content {
+        flex: 1 1 60%;
+        padding-left: 60px;
+        padding-right: 60px;
+        padding-top: 118px;
+
+
+        &-title {
+            font-weight: 500;
+            font-size: 25px;
+            line-height: 140%;
+            letter-spacing: 0.02em;
+            color: #000000;
+            padding-bottom: 20px;
+        }
+
+        &-info {
+            font-weight: 500;
+            font-size: 17px;
+            line-height: 140%;
+            letter-spacing: 0.02em;
+            color: #000000;
+            padding-bottom: 20px;
+        }
+    }
+}

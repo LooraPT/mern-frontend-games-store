@@ -2,8 +2,10 @@
     border-bottom: 1px solid #868686;
     width: 356px;
     margin-bottom: 25px;
+    padding-bottom: 10px;
 
     &::placeholder {
+
         font-weight: 500;
         font-size: 17px;
         line-height: 140%;

@@ -9,10 +9,12 @@ import { useContext } from 'react';
 import { Context } from '../..';
 import ShopCard from '../../components/ShopCard/ShopCard';
 import CartService from '../../services/cart-service';
+import { useState } from 'react';
 
 function ItemProduct() {
     const { games, cart } = useContext(Context)
     const { id } = useParams()
+    const [inCart, setInCart] = useState(false)
 
     const fetchOne = async () => {
         const { data } = await GamesService.fetchOneGames(id)
@@ -29,11 +31,34 @@ function ItemProduct() {
 
     const addItemInCart = async () => {
         const { data } = await CartService.addItemInCart(id)
+        setInCart(true)
 
     }
 
+    const checkInCart = () => {
+        cart.cartItems.forEach(item => {
+            if (item._id === id) {
+                setInCart(true)
+            }
+        })
+    }
+
+    const deleteItem = async () => {
+        const { data } = await CartService.removeItemInCart(id)
+        cart.setSelectedItems(data)
+        setInCart(false)
+    }
+
+    const fetchAllItemsCart = async () => {
+        const { data } = await CartService.getAllItemsCart();
+        cart.setCartItems(data)
+        checkInCart()
+    }
+
+
     useEffect(() => {
         fetchOne()
+        fetchAllItemsCart()
         gamesCheck()
     }, [])
 
@@ -55,7 +80,9 @@ function ItemProduct() {
                     </div>
                     <div className='info__about'>
                         <p className="info__about-price">{'$' + game.price}{game.prePrice ? <s>{'$' + game.prePrice}</s> : ''}</p>
-                        <MainButton onClick={addItemInCart}>Add to cart</MainButton>
+                        {!inCart
+                            ? <MainButton onClick={addItemInCart}>Add to cart</MainButton>
+                            : <MainButton onClick={deleteItem}>Remove game</MainButton>}
                     </div>
                 </div>
                 <div style={{ paddingTop: '70px' }} className="same__items">

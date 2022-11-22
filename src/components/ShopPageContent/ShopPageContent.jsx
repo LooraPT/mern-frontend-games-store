@@ -9,8 +9,8 @@ function ShopPageContent() {
         <section className={cl.shopPage}>
             <div className="shop__container">
                 <AboutPageDescription namePre={'Main'} nameNow={'Shop'} />
-                <AuthorList style={{ marginBottom: '92px' }} />
-                <p style={{ marginBottom: '30px' }}><span>You see 9 from 12 items</span></p>
+                <AuthorList />
+                <p className={cl.shopP}><span>You see 9 from 12 items</span></p>
                 <ShopContent />
             </div>
         </section>

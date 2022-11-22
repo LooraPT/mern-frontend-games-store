@@ -1,0 +1,51 @@
+.contact {
+    padding: 214px 0;
+
+    &__about {
+        display: flex;
+
+        &-item {
+            flex: 1 1 auto;
+
+            h5 {
+                font-weight: 500;
+                font-size: 17px;
+                line-height: 140%;
+                letter-spacing: 0.02em;
+                color: #000000;
+            }
+
+            h6 {
+                font-weight: 500;
+                font-size: 20px;
+                line-height: 140%;
+                letter-spacing: 0.02em;
+                color: #000000;
+
+            }
+        }
+    }
+}
+
+.form__write {
+    margin-top: 100px;
+    width: 30%;
+
+    &-us {
+        display: flex;
+        flex-direction: column;
+
+        button {
+            align-self: flex-start;
+        }
+    }
+}
+
+.title__write-us {
+    font-weight: 500;
+    font-size: 25px;
+    line-height: 140%;
+    letter-spacing: 0.02em;
+    color: #000000;
+    padding-bottom: 62px;
+}

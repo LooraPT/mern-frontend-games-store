@@ -10,6 +10,12 @@ function Contact() {
     const [email, setEmail] = useState('');
     const [phone, setPhone] = useState('');
     const [message, setMessage] = useState('');
+    const [send, setSend] = useState(false);
+
+    const sendCall = (e) => {
+        e.preventDefault()
+        setSend(true)
+    }
 
     return (
         <section className="contact">
@@ -35,9 +41,12 @@ function Contact() {
                         <MainInput value={name} onChange={(e) => setName(e.target.value)} placeholder="Name" />
                         <MainInput value={email} onChange={(e) => setEmail(e.target.value)} placeholder="E-mail" />
                         <MainInput value={phone} onChange={(e) => setPhone(e.target.value)} placeholder="Phone number" />
-                        <MainInput value={message} onChange={(e) => setMessage(e.target.value)} placeholder="Message" />
-                        <MainButton>Send</MainButton>
+                        <MainInput style={{ padding: '10px 10px 60px 10px' }} value={message} onChange={(e) => setMessage(e.target.value)} placeholder="Message" />
+                        <MainButton onClick={sendCall}>Send</MainButton>
                     </form>
+                    {send && <div className="form__write-send">
+                        <h5>Message sent successfully</h5>
+                    </div>}
                 </div>
             </div>
         </section>

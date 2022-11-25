@@ -3,12 +3,13 @@ import Admin from "../pages/Admin/Admin"
 import Auth from "../pages/Auth/Auth"
 import Cart from "../pages/Cart/Cart"
 import Contact from "../pages/Contact/Contact"
+import ErrorPage from "../pages/Error/ErrorPage"
 import ItemProduct from "../pages/ItemProduct/ItemProduct"
 import MainPage from "../pages/MainPage/MainPage"
 import Order from "../pages/Order/Order"
 import Shop from "../pages/Shop/Shop"
 import SuccessOrder from "../pages/SuccessOrder/SuccessOrder"
-import { ABOUT_ROUTE, ADMIN_ROUTE, CART_ROUTE, CONTACT_ROUTE, ITEM_ROUTE, LOGIN_ROUTE, MAIN_ROUTE, ORDER_ROUTE, REGISTRATION_ROUTE, SHOP_ROUTE, SUCCESS_ORDER_ROUTE } from "../utils/pages"
+import { ABOUT_ROUTE, ADMIN_ROUTE, CART_ROUTE, CONTACT_ROUTE, ERROR_ROUTE, ITEM_ROUTE, LOGIN_ROUTE, MAIN_ROUTE, ORDER_ROUTE, REGISTRATION_ROUTE, SHOP_ROUTE, SUCCESS_ORDER_ROUTE } from "../utils/pages"
 
 
 
@@ -59,5 +60,9 @@ export const publicRoutes = [
     {
         path: CONTACT_ROUTE,
         element: <Contact />
+    },
+    {
+        path: ERROR_ROUTE,
+        element: <ErrorPage />
     }
 ]

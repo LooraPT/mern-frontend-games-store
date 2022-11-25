@@ -11,15 +11,40 @@ import instagram from '../../assets/icons/instagram.svg';
 import facebook from '../../assets/icons/facebook.svg';
 import twitter from '../../assets/icons/twitter.svg';
 import visaMastercard from '../../assets/icons/visa-mastercard.svg';
+import { useState } from 'react';
+import { useEffect } from 'react';
 
 function Footer(props) {
     const { user } = useContext(Context)
     const navigate = useNavigate()
+    const [isAdmin, setIsAdmin] = useState(false)
+    const [isUser, setIsUser] = useState(false)
+
+    useEffect(() => {
+        checkRole()
+    }, [user.user])
+
+    const checkRole = () => {
+        if (user.user.roles) {
+            user.user.roles.forEach(role => {
+                if (role === 'ADMIN') {
+                    setIsAdmin(true)
+                }
+
+                if (role === 'USER') {
+                    setIsUser(true)
+                }
+            });
+        }
+    }
+
 
     const exit = async () => {
         await AuthService.logOut()
         user.setUser({})
         user.setIsAuth(false)
+        setIsUser(false)
+        setIsAdmin(false)
         localStorage.removeItem('token')
     }
 
@@ -37,8 +62,8 @@ function Footer(props) {
                 <div className="footer__col">
                     <div style={{ paddingBottom: '67px' }} className="footer__logo">GameAwesome</div>
                     <div className="footer__logo">
-                        <MainButton style={{ marginRight: '10px' }} onClick={exit}>Exit</MainButton>
-                        <MainButton onClick={admin}>Admin</MainButton>
+                        {isUser && <MainButton style={{ marginRight: '10px' }} onClick={exit}>Exit</MainButton>}
+                        {isAdmin && <MainButton onClick={admin}>Admin</MainButton>}
                     </div>
                 </div>
                 <div style={{ display: 'flex', flex: '1 1 auto', justifyContent: 'center' }} className="footer__col">

@@ -39,6 +39,22 @@
             align-self: flex-start;
         }
     }
+
+    &-send {
+        transition: all linear 0.2s;
+        margin-top: 20px;
+        background: #F1EADC;
+        text-align: center;
+        padding: 20px 0;
+
+        h5 {
+            font-weight: 500;
+            font-size: 17px;
+            line-height: 140%;
+            letter-spacing: 0.02em;
+            color: #000000;
+        }
+    }
 }
 
 .title__write-us {
@@ -48,4 +64,6 @@
     letter-spacing: 0.02em;
     color: #000000;
     padding-bottom: 62px;
+
+
 }

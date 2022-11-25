@@ -8,7 +8,7 @@ import AboutPageDescription from '../../components/AboutPageDescription/AboutPag
 import CartItem from '../../components/CartItem/CartItem';
 import MainButton from '../../components/controls/Button/MainButton';
 import CartService from '../../services/cart-service';
-import { SHOP_ROUTE } from '../../utils/pages';
+import { ORDER_ROUTE, SHOP_ROUTE } from '../../utils/pages';
 import './Cart.scss'
 
 function Cart() {
@@ -40,7 +40,7 @@ function Cart() {
                 <div className="cart__rows rows-cart">
                     <div className="rows-cart__col">Item</div>
                     <div className="rows-cart__col">Price</div>
-                    <div className="rows-cart__col">Count</div>
+                    <div className="rows-cart__col">Name</div>
                     <div className="rows-cart__col">All</div>
                 </div>
                 <hr />
@@ -60,7 +60,7 @@ function Cart() {
                     </div>
                     {cart.cartItems
                         ?
-                        <MainButton>Checkout</MainButton>
+                        <MainButton onClick={() => navigate(ORDER_ROUTE)}>Checkout</MainButton>
                         :
                         <MainButton onClick={() => navigate(SHOP_ROUTE)}>Shop</MainButton>
                     }

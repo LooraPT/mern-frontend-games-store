@@ -24,6 +24,7 @@ function Admin() {
             <Button onClick={() => setDeleteGamesShow(true)} className="mt-2">Delete Games</Button>
             <Button onClick={() => setRoleCreate(true)} className="mt-2">Add Role</Button>
             <Button onClick={() => setRoleGive(true)} className="mt-2">Give Role</Button>
+
             <ModalGenre show={genreShow} onHide={() => setGenreShow(false)} />
             <ModalAuthor show={authorShow} onHide={() => setAuthorShow(false)} />
             <ModalGames show={gamesShow} onHide={() => setGamesShow(false)} />

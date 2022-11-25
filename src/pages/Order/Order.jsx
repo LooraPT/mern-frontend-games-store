@@ -1,10 +1,14 @@
 import React from 'react';
+import AboutPageDescription from '../../components/AboutPageDescription/AboutPageDescription';
+import './Order.scss';
 
 function Order() {
     return (
-        <div>
-            ORDER
-        </div>
+        <section className="order">
+            <div className="order__container">
+                <AboutPageDescription nameNow={'Order'} namePre={'Main'} />
+            </div>
+        </section>
     );
 }
 

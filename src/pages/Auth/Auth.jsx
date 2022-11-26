@@ -1,5 +1,5 @@
 import React from 'react';
-import AuthForm from '../../components/Form/AuthForm';
+import AuthForm from '../../components/Form/AuthForm/AuthForm';
 import './Auth.scss';
 
 

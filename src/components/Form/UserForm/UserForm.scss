@@ -1,0 +1,15 @@
+.user__form-order {
+    display: flex;
+    flex-direction: column;
+
+    h4 {
+        font-weight: 500;
+        font-size: 25px;
+        line-height: 140%;
+        letter-spacing: 0.02em;
+        color: #000000;
+        padding-bottom: 20px;
+    }
+
+    margin-bottom: 40px;
+}

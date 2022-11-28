@@ -17,6 +17,8 @@ function AuthForm(props) {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [checkPassword, setCheckPassword] = useState('');
+
+
     const [isLoading, setIsLoading] = useState(false);
 
     const login = async (e) => {
@@ -51,7 +53,6 @@ function AuthForm(props) {
             }
 
         }
-
     }
 
     if (isLoading) {
@@ -63,8 +64,20 @@ function AuthForm(props) {
     return (
         <form className={cl.formAuth}>
             <h2>{isSignIn ? 'Sign in' : 'Registration'}</h2>
-            <MainInput value={email} onChange={(e) => setEmail(e.target.value)} placeholder="Write your email..." />
-            <MainInput type="password" value={password} onChange={(e) => setPassword(e.target.value)} placeholder="Write your password..." />
+            <MainInput
+                name="email"
+                type="email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                placeholder="Write your email..."
+            />
+            <MainInput
+                name="password"
+                type="password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                placeholder="Write your password..."
+            />
             {!isSignIn &&
                 <MainInput type="password" value={checkPassword} onChange={(e) => setCheckPassword(e.target.value)} placeholder="Write your password again..." />
             }

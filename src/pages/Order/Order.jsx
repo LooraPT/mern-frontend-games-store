@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import { useContext } from 'react';
+import { Context } from '../..';
 import AboutPageDescription from '../../components/AboutPageDescription/AboutPageDescription';
 import MainButton from '../../components/controls/Button/MainButton';
 import AddressForm from '../../components/Form/AddressForm/AddressForm';
@@ -7,6 +9,8 @@ import UserForm from '../../components/Form/UserForm/UserForm';
 import './Order.scss';
 
 function Order() {
+    const { cart } = useContext(Context);
+
     const [name, setName] = useState('')
     const [email, setEmail] = useState('')
     const [phone, setPhone] = useState('')
@@ -46,10 +50,27 @@ function Order() {
                             comments={comments}
                             setComments={setComments}
                         />
-                        <MainButton onClick={sendInfo}>send</MainButton>
                     </div>
-                    <div className="user-info__sum">
+                    <div className="user-info__description">
+                        <h4 className="order__title mb-4">Your order</h4>
+                        <div className="order__info-items info-item">
+                            <div className="info-item__des mb-4">
+                                <div className="info-item__name">Product</div>
+                                <div className="info-item__price">Price</div>
+                            </div>
+                            {cart.cartItems.map(item =>
+                                <div key={item._id} className="info-item__des mb-4">
+                                    <div className="info-item__name">{item.name}</div>
+                                    <div className="info-item__price">{item.price}$</div>
+                                </div>
+                            )}
+                            <div className="info-item__des des-back mb-4">
+                                <div className="info-item__name">Total</div>
+                                <div className="info-item__price">{cart.total}$</div>
+                            </div>
+                            <MainButton onClick={sendInfo}>Make an order</MainButton>
 
+                        </div>
                     </div>
                 </div>
             </div>

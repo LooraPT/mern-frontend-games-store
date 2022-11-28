@@ -3,6 +3,65 @@
 
     &__user {
         display: flex;
+        flex-wrap: wrap;
 
     }
+}
+
+.user-info__form {
+    flex: 1 1 70%;
+}
+
+.user-info__description {
+    flex: 1 1 30%;
+
+    .order__title {
+        font-weight: 500;
+        font-size: 25px;
+        line-height: 140%;
+        letter-spacing: 0.02em;
+        color: #000000;
+    }
+}
+
+
+
+.info-item__des {
+    display: flex;
+}
+
+.des-back {
+    padding: 20px 0;
+    background: #F1EADC;
+}
+
+.info-item__info {
+    flex: 1 1 50%;
+
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 140%;
+    letter-spacing: 0.02em;
+    color: #000000;
+}
+
+.info-item__name {
+    flex: 1 1 70%;
+
+    padding-left: 10px;
+    font-weight: 500;
+    font-size: 17px;
+    line-height: 140%;
+    letter-spacing: 0.02em;
+    color: #000000;
+}
+
+.info-item__price {
+    flex: 1 1 30%;
+
+    font-weight: 500;
+    font-size: 17px;
+    line-height: 140%;
+    letter-spacing: 0.02em;
+    color: #000000;
 }

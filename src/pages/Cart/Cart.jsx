@@ -1,7 +1,9 @@
 import { observer } from 'mobx-react-lite';
 import React from 'react';
+import { useState } from 'react';
 import { useEffect } from 'react';
 import { useContext } from 'react';
+import { Spinner } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
 import { Context } from '../..';
 import AboutPageDescription from '../../components/AboutPageDescription/AboutPageDescription';
@@ -13,6 +15,7 @@ import './Cart.scss'
 
 function Cart() {
     const { cart } = useContext(Context)
+    const [loading, setLoading] = useState(false);
     const navigate = useNavigate()
 
     const fetchAllItemsCart = async () => {
@@ -27,11 +30,26 @@ function Cart() {
             return a + b.price;
         }, initialValue);
         cart.setTotal(totalCart)
+        setLoading(false)
     }
 
     useEffect(() => {
+        setLoading(true)
         fetchAllItemsCart()
     }, [cart.selectedItem])
+
+
+
+
+    if (loading) {
+        return (
+            <div className="loading__container d-flex align-items-center justify-content-center">
+                <Spinner animation="border" role="status">
+                    <span className="visually-hidden">Loading...</span>
+                </Spinner>
+            </div>
+        )
+    }
 
     return (
         <section className="cart" style={{ paddingTop: '256px' }}>

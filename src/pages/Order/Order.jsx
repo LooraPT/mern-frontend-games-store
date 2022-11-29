@@ -1,15 +1,19 @@
 import React, { useState } from 'react';
 import { useContext } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { Context } from '../..';
+import OrderService from '../../services/order-service'
 import AboutPageDescription from '../../components/AboutPageDescription/AboutPageDescription';
 import MainButton from '../../components/controls/Button/MainButton';
 import AddressForm from '../../components/Form/AddressForm/AddressForm';
 import CommentForm from '../../components/Form/CommentForm/CommentForm';
 import UserForm from '../../components/Form/UserForm/UserForm';
+import { SUCCESS_ORDER_ROUTE } from '../../utils/pages';
 import './Order.scss';
 
 function Order() {
     const { cart } = useContext(Context);
+    const navigate = useNavigate();
 
     const [name, setName] = useState('')
     const [email, setEmail] = useState('')
@@ -23,8 +27,9 @@ function Order() {
 
     const [comments, setComments] = useState('')
 
-    const sendInfo = () => {
-        console.log(name, email, phone, country, comments)
+    const sendInfo = async () => {
+        const order = await OrderService.createOrder({ name, email, phone, country, city, street, house, apartment, comments })
+        navigate(SUCCESS_ORDER_ROUTE)
     }
 
     return (

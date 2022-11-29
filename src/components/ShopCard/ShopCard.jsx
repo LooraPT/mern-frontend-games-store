@@ -1,6 +1,5 @@
 import React from 'react';
 import cl from './ShopCard.module.scss';
-import game from '../../assets/games/game.jpg';
 import vector from '../../assets/Vector.svg';
 import { NavLink } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';

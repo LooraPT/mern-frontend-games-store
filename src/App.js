@@ -6,6 +6,7 @@ import Footer from './components/Footer/Footer';
 import { Context } from '.';
 import { $api, $authApi } from './api';
 import { observer } from 'mobx-react-lite';
+import LoaderMain from './components/LoaderMain/LoaderMain';
 
 function App() {
     const { user } = useContext(Context)
@@ -31,7 +32,7 @@ function App() {
 
     if (isLoading) {
         return (
-            <div>Loading...</div>
+            <LoaderMain />
         );
     }
 

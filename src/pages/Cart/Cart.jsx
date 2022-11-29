@@ -3,12 +3,12 @@ import React from 'react';
 import { useState } from 'react';
 import { useEffect } from 'react';
 import { useContext } from 'react';
-import { Spinner } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
 import { Context } from '../..';
 import AboutPageDescription from '../../components/AboutPageDescription/AboutPageDescription';
 import CartItem from '../../components/CartItem/CartItem';
 import MainButton from '../../components/controls/Button/MainButton';
+import LoaderMain from '../../components/LoaderMain/LoaderMain';
 import CartService from '../../services/cart-service';
 import { ORDER_ROUTE, SHOP_ROUTE } from '../../utils/pages';
 import './Cart.scss'
@@ -43,11 +43,7 @@ function Cart() {
 
     if (loading) {
         return (
-            <div className="loading__container d-flex align-items-center justify-content-center">
-                <Spinner animation="border" role="status">
-                    <span className="visually-hidden">Loading...</span>
-                </Spinner>
-            </div>
+            <LoaderMain />
         )
     }
 

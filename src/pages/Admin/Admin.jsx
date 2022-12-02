@@ -7,6 +7,7 @@ import ModalGames from '../../components/Modal/ModalGames';
 import ModalGenre from '../../components/Modal/ModalGenre';
 import ModalGiveRoles from '../../components/Modal/ModalGiveRoles';
 import ModalARoles from '../../components/Modal/ModalRoles';
+import cl from './Admin.module.scss';
 
 function Admin() {
     const [authorShow, setAuthorShow] = useState(false);
@@ -17,20 +18,22 @@ function Admin() {
     const [roleGive, setRoleGive] = useState(false);
 
     return (
-        <div style={{ display: 'flex', paddingTop: '200px', paddingBottom: '500px', justifyContent: 'center', flexDirection: 'column' }}>
-            <Button onClick={() => setGenreShow(true)} className="mt-2">Add Genre</Button>
-            <Button onClick={() => setAuthorShow(true)} className="mt-2">Add Author</Button>
-            <Button onClick={() => setGamesShow(true)} className="mt-2">Add Games</Button>
-            <Button onClick={() => setDeleteGamesShow(true)} className="mt-2">Delete Games</Button>
-            <Button onClick={() => setRoleCreate(true)} className="mt-2">Add Role</Button>
-            <Button onClick={() => setRoleGive(true)} className="mt-2">Give Role</Button>
+        <div className={cl.admin__container}>
+            <div className={cl.admin__main}>
+                <Button onClick={() => setGenreShow(true)} className="mt-2">Add Genre</Button>
+                <Button onClick={() => setAuthorShow(true)} className="mt-2">Add Author</Button>
+                <Button onClick={() => setGamesShow(true)} className="mt-2">Add Games</Button>
+                <Button onClick={() => setDeleteGamesShow(true)} className="mt-2">Delete Games</Button>
+                <Button onClick={() => setRoleCreate(true)} className="mt-2">Add Role</Button>
+                <Button onClick={() => setRoleGive(true)} className="mt-2">Give Role</Button>
 
-            <ModalGenre show={genreShow} onHide={() => setGenreShow(false)} />
-            <ModalAuthor show={authorShow} onHide={() => setAuthorShow(false)} />
-            <ModalGames show={gamesShow} onHide={() => setGamesShow(false)} />
-            <ModalDeleteGames show={deleteGamesShow} onHide={() => setDeleteGamesShow(false)} />
-            <ModalARoles show={roleCreate} onHide={() => setRoleCreate(false)} />
-            <ModalGiveRoles show={roleGive} onHide={() => setRoleGive(false)} />
+                <ModalGenre show={genreShow} onHide={() => setGenreShow(false)} />
+                <ModalAuthor show={authorShow} onHide={() => setAuthorShow(false)} />
+                <ModalGames show={gamesShow} onHide={() => setGamesShow(false)} />
+                <ModalDeleteGames show={deleteGamesShow} onHide={() => setDeleteGamesShow(false)} />
+                <ModalARoles show={roleCreate} onHide={() => setRoleCreate(false)} />
+                <ModalGiveRoles show={roleGive} onHide={() => setRoleGive(false)} />
+            </div>
         </div>
     );
 }

@@ -16,22 +16,23 @@ function ShopContent(props) {
     const isShop = location.pathname === SHOP_ROUTE
 
     return (
-        <section className="games" style={{ marginTop: '129px' }}>
+        <section className="games">
             <div className={!isShop ? "games__container games__item" : ''}>
                 {!isShop
-                    ? <div style={{ paddingBottom: '93px' }} className="games__item-nav">
+                    ? <div className="games__item-nav">
                         <h2 className="games__item-nav-title">New collection</h2>
                     </div>
                     :
                     ''}
-                <div style={{ display: 'flex', width: '100%', flexWrap: 'wrap', gap: '20px' }} className="games__catalog">
+                <div className="games__magazine">
                     {games.games.map(game =>
                         <ShopCard style={{ marginBottom: '20px' }} key={game._id} gameD={game} />
                     )}
                 </div>
                 {!isShop
                     ?
-                    <MainButton onClick={() => navigate(SHOP_ROUTE)}
+                    <MainButton
+                        onClick={() => navigate(SHOP_ROUTE)}
                         style={{ position: 'relative', left: '50%', transform: 'translate(-50%, 0)', marginTop: '20px' }}
                     >
                         Open Shop

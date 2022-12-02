@@ -1,6 +1,5 @@
 import React from 'react';
 import cl from './CartItem.module.scss';
-import logo from '../../assets/main/main2.jpg'
 import x from '../../assets/icons/x.svg';
 import { observer } from 'mobx-react-lite';
 import CartService from '../../services/cart-service';
@@ -19,8 +18,8 @@ function CartItem({ item }) {
     return (
         <div className="item__cart">
             <div className="rows-cart__col">
-                <img onClick={deleteItem} style={{ paddingRight: '10px', cursor: 'pointer' }} src={x} />
-                <img style={{ width: '125px', height: '179px' }} src={`${process.env.REACT_APP_SERVER_URL_2}/` + item.img} />
+                <img onClick={deleteItem} className={cl.itemRemove} src={x} alt={"x"} />
+                <img width={125} height={179} src={`${process.env.REACT_APP_SERVER_URL_2}/` + item.img} alt={item.name} />
             </div>
             <div className="rows-cart__col">{'$' + item.price}</div>
             <div className="rows-cart__col">{item.name}</div>

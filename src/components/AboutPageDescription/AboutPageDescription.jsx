@@ -6,7 +6,6 @@ function AboutPageDescription({ namePre, nameNow }) {
         <div className={cl.about}>
             <h1>{nameNow}</h1>
             <p>{namePre} - <span>{nameNow}</span></p>
-
         </div>
     );
 }

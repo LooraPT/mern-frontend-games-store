@@ -38,10 +38,10 @@ function NavBarMain(props) {
                         ?
                         <div className="button__nav">
                             <div className="button__phone phone">
-                                <img onClick={() => setVisible(true)} style={{ cursor: 'pointer' }} src={PhoneIcon} alt="phone__icon" />
+                                <img onClick={() => setVisible(true)} src={PhoneIcon} alt="phone__icon" />
                                 <span>+380 111 111 11 11</span>
                             </div>
-                            <img onClick={() => navigate(CART_ROUTE)} style={{ cursor: 'pointer' }} src={CartIcon} alt="cart" />
+                            <img onClick={() => navigate(CART_ROUTE)} src={CartIcon} alt="cart" />
                         </div>
                         :
                         <div className="button__authorization">

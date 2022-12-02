@@ -1,6 +1,10 @@
 .games {
+    margin-top: 129px;
+
     &__item {
         &-nav {
+            padding-bottom: 93px;
+
             &-title {
                 font-weight: 500;
                 font-size: 40px;
@@ -11,5 +15,12 @@
 
 
         }
+    }
+
+    &__magazine {
+        display: flex;
+        width: 100%;
+        flex-wrap: wrap;
+        gap: 20px;
     }
 }

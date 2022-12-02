@@ -48,7 +48,7 @@ function Cart() {
     }
 
     return (
-        <section className="cart" style={{ paddingTop: '256px' }}>
+        <section className="cart">
             <div className="cart__container">
                 <AboutPageDescription namePre={"Main"} nameNow={"Cart"} />
                 <div className="cart__rows rows-cart">

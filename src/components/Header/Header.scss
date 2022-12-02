@@ -38,6 +38,10 @@
             &__nav {
                 display: flex;
                 text-align: center;
+
+                & img {
+                    cursor: pointer;
+                }
             }
 
             &__phone {
@@ -46,6 +50,8 @@
 
 
                 & img {
+                    cursor: pointer;
+
                     &:hover {
                         background-color: #6E9C9F;
                     }

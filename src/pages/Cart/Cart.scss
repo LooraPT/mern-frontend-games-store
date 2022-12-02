@@ -1,4 +1,6 @@
 .cart {
+    padding-top: 256px;
+
     &__rows {
         display: grid;
         grid-template-columns: 4fr repeat(3, 1fr);
@@ -25,10 +27,7 @@
         font-weight: 500;
         font-size: 20px;
         line-height: 140%;
-
-
         letter-spacing: 0.02em;
-
         color: #000000;
     }
 }
@@ -47,9 +46,7 @@
     font-weight: 500;
     font-size: 25px;
     line-height: 140%;
-
     letter-spacing: 0.02em;
-
     color: #000000;
 }
 

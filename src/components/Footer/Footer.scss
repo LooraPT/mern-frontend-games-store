@@ -1,4 +1,23 @@
 .footer {
+    background: #F1EADC;
+    padding: 92px 0;
+    margin-top: 20px;
+
+    &__logo {
+        padding-bottom: 67px;
+    }
+
+    &__container {
+        display: grid;
+        grid-template-columns: 2fr 4fr 1fr;
+    }
+
+    &__phone {
+        padding-bottom: 15px;
+    }
+
+
+
     &__social {
         padding-top: 15px;
         display: flex;
@@ -14,4 +33,15 @@
     &__card {
         padding-top: 15px;
     }
+}
+
+.first__col {
+    display: flex;
+    flex: 1 1 auto;
+    justify-content: center;
+}
+
+.menu__list {
+    display: flex;
+    gap: 30px;
 }

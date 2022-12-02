@@ -23,10 +23,10 @@ function MainContent() {
 
                 </div>
                 <div className="page__first-photo photo">
-                    <img style={{ width: '410px', height: '646px' }} src={photoFirst} alt="main photo" />
+                    <img width={410} height={646} src={photoFirst} alt="main photo" />
                     <div className="photo__other other-photo">
-                        <img style={{ width: '197px', height: '197px' }} className="other-photo__img-2" src={photoTwo} alt="2 photo" />
-                        <img style={{ width: '190px', height: '318px' }} className="other-photo__img-3" src={photoThree} alt="3 photo" />
+                        <img width={197} height={197} className="other-photo__img-2" src={photoTwo} alt="2 photo" />
+                        <img width={190} height={318} className="other-photo__img-3" src={photoThree} alt="3 photo" />
                     </div>
                 </div>
             </div>

@@ -29,8 +29,9 @@ function About() {
                     info1={"Assassin's Creed is an open-world action-adventure stealth video game franchise published by Ubisoft and developed mainly by its studio Ubisoft Montreal using the game engine Anvil and its more advanced derivatives."}
                     info2={"The series' eponymous first title was released in 2007, and it has featured twelve main games in total, the most recent being 2020's Valhalla. Main games in the Assassin's Creed series are set in an open world and played from the third-person perspective."}
                 />
-                <MainButton onClick={() => navigate(SHOP_ROUTE)} style={{ display: 'flex', margin: '0 auto' }}>Shop</MainButton>
-
+                <div className="about__button">
+                    <MainButton onClick={() => navigate(SHOP_ROUTE)}>Shop</MainButton>
+                </div>
             </div>
         </section>
     );

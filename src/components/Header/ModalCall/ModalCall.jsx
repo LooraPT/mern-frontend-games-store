@@ -26,10 +26,24 @@ function ModalCall({ visible, setVisible }) {
     return (
         <div className={rootCl.join(' ')} onClick={() => setVisible(false)}>
             <div className={cl.modalCall__content} onClick={(e) => e.stopPropagation()}>
-                <div style={{ display: 'flex', justifyContent: 'center', paddingBottom: '15px', paddingTop: '20px' }}>Buy callback</div>
-                <MainInput value={email} onChange={(e) => setEmail(e.target.value)} placeholder="name" />
-                <MainInput value={password} onChange={(e) => setPassword(e.target.value)} placeholder="email" />
-                <MainInput value={phone} onChange={(e) => setPhone(e.target.value)} placeholder="phone" />
+                <div className={cl.callback}>
+                    Buy callback
+                </div>
+                <MainInput
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    placeholder="name"
+                />
+                <MainInput
+                    value={password}
+                    onChange={(e) => setPassword(e.target.value)}
+                    placeholder="email"
+                />
+                <MainInput
+                    value={phone}
+                    onChange={(e) => setPhone(e.target.value)}
+                    placeholder="phone"
+                />
                 <MainButton onClick={sentChange}>Order Call</MainButton>
             </div>
         </div>

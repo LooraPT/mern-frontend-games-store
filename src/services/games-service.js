@@ -14,7 +14,7 @@ export default class GamesService {
         return $authApi.post('/games', games)
     }
 
-    static async deleteGame(name) {
-        return $authApi.delete('/games', { data: { name: name } })
+    static async deleteGame(id) {
+        return $authApi.delete(`/games/${id}`)
     }
 }

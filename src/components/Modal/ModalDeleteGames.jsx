@@ -18,8 +18,8 @@ function ModalDeleteGames({ show, onHide }) {
 
 
     const deleteGame = async () => {
-        const name = games.selectedGames.name
-        const { data } = await GamesService.deleteGame(name);
+        const id = games.selectedGames._id
+        const { data } = await GamesService.deleteGame(id);
         onHide()
     }
 

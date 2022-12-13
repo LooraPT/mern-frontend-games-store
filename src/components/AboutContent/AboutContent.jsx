@@ -1,9 +1,10 @@
 import React from 'react';
 import './AboutContent.scss';
 
-function AboutContent({ image, title, info1, info2, ...props }) {
+function AboutContent({ image, title, info1, info2, index }) {
+
     return (
-        <div {...props} className="about__blog blog">
+        <div style={index % 2 !== 0 ? { flexDirection: 'row-reverse' } : {}} className="about__blog blog">
             <div className="blog__image">
                 <img width={442} height={547} src={image} className="blog__image-img" />
             </div>

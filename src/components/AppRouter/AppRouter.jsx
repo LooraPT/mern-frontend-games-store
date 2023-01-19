@@ -1,13 +1,12 @@
 import React from 'react';
 import { useContext } from 'react';
-import { Route, Routes, Navigate, useLocation } from 'react-router-dom';
+import { Route, Routes, Navigate } from 'react-router-dom';
 import { Context } from '../..';
 import { authRoutes, publicRoutes } from '../../router';
 import { ORDER_ROUTE } from '../../utils/pages';
 
 function AppRouter() {
     const { user } = useContext(Context)
-    const { pathname } = useLocation()
 
 
     return (
